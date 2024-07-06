@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const fs = require("fs");
@@ -5,7 +6,6 @@ const path = require("path");
 const musicMetadata = require("music-metadata");
 
 const concatAudioFiles = require("./helpers/util");
-
 const parseFile = musicMetadata.parseFile;
 
 let currentTimeStamp = 0;
@@ -177,6 +177,10 @@ app.get("/stream", (req, res) => {
       });
   }
   sendFile();
+});
+
+app.get("/", (req, res) => {
+  res.send("HELLO from backend");
 });
 
 startServer();
