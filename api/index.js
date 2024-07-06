@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const musicMetadata = require("music-metadata");
 
-const concatAudioFiles = require("./helpers/util");
+const concatAudioFiles = require("../helpers/util");
 const parseFile = musicMetadata.parseFile;
 
 let currentTimeStamp = 0;
